@@ -20,9 +20,8 @@ export const UserProvider = () => {
     async function fetchData() {
       // call an api from glitch to wake up the server
       try {
-        const res = await axios.get("https://api.first.org/data/v1/countries");
-        setCountries(res.data.data);
-        console.log(res.data.data);
+        const res = await axios.get("https://cdn.jsdelivr.net/gh/stefanbinder/countries-states/countries.json");
+        setCountries(res.data);
       } catch (error) {
         console.warn(error.message);
       }
