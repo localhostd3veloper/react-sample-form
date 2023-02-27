@@ -6,14 +6,14 @@ function Home() {
   return (
     <div className="bg-main text-xl h-screen bg-cover  w-screen bg-center px-3 py-2 flex justify-center items-center">
       <div className="p-4 backdrop-blur-sm rounded-lg h-[80vh] backdrop-brightness-75 overflow-hidden">
-        <span className="text-2xl font-medium"> Please Fill the form</span>
+        <span className="text-2xl font-medium text-white"> Please Fill the form</span>
         <form
           className="flex flex-col gap-6 mt-10"
           onSubmit={(e) => e.preventDefault()}
         >
           {inputTypes.map((input, index) => (
             <div key={index} className="flex flex-col">
-              <label htmlFor={input.name} className="text-gray-800">
+              <label htmlFor={input.name} className="text-gray-200">
                 {input.label}
               </label>
               {input.type === "select" ? (

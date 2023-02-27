@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: () => ({
-        "main": "url('https://img.freepik.com/premium-photo/blurred-interior-hospital-clinical-with-people-abstract-medical-background_1484-1309.jpg')",
+        "main": "url('https://www.pixelstalk.net/wp-content/uploads/images5/Orange-Aesthetic-Wallpaper-Free-Download.png')",
       }),
     },
   },
