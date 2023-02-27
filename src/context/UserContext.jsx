@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { createContext, useState, useContext, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "../Home";
+import Home from "../components/Home";
+import Result from "../components/Result";
 
 export const UserContext = createContext();
 
@@ -80,6 +81,7 @@ export const UserProvider = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/result" element={<Result />} />
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
