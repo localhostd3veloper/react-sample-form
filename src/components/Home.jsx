@@ -23,6 +23,7 @@ function Home() {
                   className="border-2 border-gray-300 rounded-md px-2 py-1"
                   onChange={input.onchange}
                   placeholder={input.placeholder}
+                  required={input.required}
                 >
                   <option defaultValue={input.placeholder}>
                     {input.placeholder}
@@ -40,6 +41,7 @@ function Home() {
                   id={input.name}
                   placeholder={input.placeholder}
                   onChange={input.onchange}
+                  required={input.required}
                   className="border-2 border-gray-300 rounded-md px-2 py-1"
                 />
               )}
