@@ -7,14 +7,14 @@ function Home() {
       <div className="p-4 backdrop-blur-sm rounded-lg h-[80vh] backdrop-brightness-75 overflow-hidden">
         Please Fill the form
         <form className="flex flex-col gap-2">
-          {inputTypes.map((inputType) => (
-            <div className="flex gap-5 items-center justify-between">
+          {inputTypes.map((inputType , index) => (
+            <div key={index} className="flex gap-5 items-center justify-between">
               <label htmlFor={inputType.name}>{inputType.label}</label>
               {inputType.type === "select" ? (
                 <select
                   name={inputType.name}
                   id={inputType.name}
-                  className="border-2 border-gray-300 rounded-md p-2"
+                  className="border-2 border-gray-300 rounded-md px-2 py-1"
 
                   onChange={inputType.onchange}
                   required={inputType.required}
@@ -32,7 +32,7 @@ function Home() {
                   placeholder={inputType.placeholder}
                   onChange={inputType.onchange}
                   required={inputType.required}
-                  className="border-2 border-gray-300 rounded-md p-2"
+                  className="border-2 border-gray-300 rounded-md px-2 py-1"
                 />
               )}
             </div>
