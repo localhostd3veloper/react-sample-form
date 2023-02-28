@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { usePerson } from "../context/UserContext";
 
 function Result() {
@@ -9,8 +10,6 @@ function Result() {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
-
-    if (!name || !email || !phone || !country) window.location.href = "/";
   }, []);
 
   if (loading)
@@ -24,10 +23,13 @@ function Result() {
     <div className="h-screen flex flex-col gap-4 justify-center items-center bg-slate-800 text-white text-2xl">
       <div className="flex flex-col gap-3">
         <span className="text-3xl font-medium">Result</span>
-        <p>Name: {name}</p>
-        <p>Email: {email}</p>
-        <p>Phone: {phone}</p>
-        <p>Country: {country}</p>
+        <p>Name: {name ? name : "N/A"}</p>
+        <p>Email: {email ? email : "N/A"}</p>
+        <p>Phone: {phone ? phone : "N/A"}</p>
+        <p>Country: {country ? country : "N/A"}</p>
+        <Link to="/" className="text-blue-500">
+          Go Back
+        </Link>
       </div>
     </div>
   );

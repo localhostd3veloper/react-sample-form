@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { createContext, useState, useContext, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Charts from "../components/Charts";
+import Forms from "../components/Forms";
 import Home from "../components/Home";
 import Result from "../components/Result";
 
@@ -21,7 +23,9 @@ export const UserProvider = () => {
     async function fetchData() {
       // call an api from glitch to wake up the server
       try {
-        const res = await axios.get("https://cdn.jsdelivr.net/gh/stefanbinder/countries-states/countries.json");
+        const res = await axios.get(
+          "https://cdn.jsdelivr.net/gh/stefanbinder/countries-states/countries.json"
+        );
         setCountries(res.data);
       } catch (error) {
         console.warn(error.message);
@@ -60,7 +64,6 @@ export const UserProvider = () => {
       name: "country",
       label: "Country",
       placeholder: "Select your country",
-
       required: true,
       onchange: (e) => setCountry(e.target.value),
       options: countries,
@@ -81,7 +84,9 @@ export const UserProvider = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/forms" element={<Forms />} />
           <Route path="/result" element={<Result />} />
+          <Route path="/charts" element={<Charts />} />
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
