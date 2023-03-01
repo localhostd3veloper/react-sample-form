@@ -70,8 +70,8 @@ function Charts() {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="time" />
-        <YAxis dataKey="ECG" />
+        <XAxis dataKey="time" interval='preserveStart' />
+        <YAxis dataKey="ECG" interval={0} ticks={[300,350,400]} domain={[300,400]} />
         <Tooltip />
         <Legend/>
         <Line
