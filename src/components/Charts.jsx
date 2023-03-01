@@ -32,11 +32,11 @@ function Charts() {
   }, [mainData]);
 
   useEffect(() => {
-    if (mainData) {
-      setTimeout(() => {
-        generateChartData();
-      }, 1000);
-    }
+  if(mainData){
+    setTimeout(() => {
+      generateChartData();
+    }, 1000);
+  }
   });
 
   const readUploadFile = (e) => {
@@ -56,7 +56,7 @@ function Charts() {
   };
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center">
+    <div className="h-screen flex flex-col justify-center items-center"> 
       <input type="file" name="upload" id="upload" onChange={readUploadFile} />
       <LineChart
         width={1000}
@@ -70,15 +70,10 @@ function Charts() {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="time" interval="preserveStart" />
-        <YAxis
-          dataKey="ECG"
-          interval={0}
-          ticks={[350, 360, 370, 380, 390, 400]}
-          domain={[300, 400]}
-        />
+        <XAxis dataKey="time" interval='preserveStart' />
+        <YAxis dataKey="ECG" interval={0} ticks={[300,350,400]} domain={[300,400]} />
         <Tooltip />
-        <Legend />
+        <Legend/>
         <Line
           type="monotone"
           dataKey="ECG"
